@@ -1,22 +1,23 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-const { Triangle, Circle, Square } = require('./lib/shapes.js');
+// const { Triangle, Circle, Square } = require('./lib/shapes.js');
 
-
-// Function to create the SVG file
 // Function to create the SVG file
 function createSVGFile(filename, text, shapeType, textColor, shapeColor) {
   let shapeMarkup = '';
 
   switch (shapeType) {
     case 'circle':
-      shapeMarkup = `<circle cx="150" cy="100" r="50" fill="${shapeColor}" />`;
+      shapeMarkup = `<circle cx="150" cy="100" r="75" fill="${shapeColor}" /> 
+      <text x="150" y="100" font-size="4em" text-anchor="middle" alignment-baseline="middle" fill="${textColor}">${text}</text>`;
       break;
     case 'triangle':
-      shapeMarkup = `<polygon points="150, 18 244, 182 56, 182" fill="${shapeColor}" />`;
+      shapeMarkup = `<polygon points="75, 175 225, 175 150, 25" fill="${shapeColor}" />
+      <text x="150" y="130" font-size="3em" text-anchor="middle" alignment-baseline="middle" fill="${textColor}">${text}</text>`;
       break;
     case 'square':
-      shapeMarkup = `<rect x="100" y="50" width="100" height="100" fill="${shapeColor}" />`;
+      shapeMarkup = `<rect x="62.5" y="12.5" width="175" height="175" fill="${shapeColor}" />
+      <text x="150" y="100" font-size="4em" text-anchor="middle" alignment-baseline="middle" fill="${textColor}">${text}</text>`;
       break;
     default:
       console.log('Invalid shape');
@@ -25,10 +26,9 @@ function createSVGFile(filename, text, shapeType, textColor, shapeColor) {
 
   const svgContent = `<svg width="300" height="200">
     ${shapeMarkup}
-    <text x="150" y="100" text-anchor="middle" fill="${textColor}">${text}</text>
   </svg>`;
 
-  fs.writeFileSync(`examples/${filename}`, svgContent);
+  fs.writeFileSync(`examples/${filename}.svg`, svgContent);
 }
   
 // Prompt user for input using inquirer
@@ -38,7 +38,7 @@ inquirer
       type: 'input',
       name: 'filename',
       message: 'Enter the name of the SVG file:',
-      default: 'logo.svg',
+      default: 'logo',
     },
     {
       type: 'input',
@@ -64,25 +64,7 @@ inquirer
   ])
   .then((answers) => {
     const { filename, text, textColor, shapeType, shapeColor } = answers;
-  
-    let shape;
-  
-    switch (shapeType) {
-      case 'circle':
-        shape = new Circle();
-        break;
-      case 'triangle':
-        shape = new Triangle();
-        break;
-      case 'square':
-        shape = new Square();
-        break;
-      default:
-        console.log('Invalid shape');
-        return;
-    }
-  
-    shape.setColor(shapeColor);
+
     createSVGFile(filename, text, shapeType, textColor, shapeColor);
   
     console.log(`Generated ${filename}`);
