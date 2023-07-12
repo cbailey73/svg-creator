@@ -71,3 +71,6 @@ inquirer
   .catch((error) => {
     console.log('An error occurred:', error);
   });
+
+module.exports = createSVGFile;
+
