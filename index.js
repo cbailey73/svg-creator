@@ -1,6 +1,5 @@
 const fs = require('fs');
 const inquirer = require('inquirer');
-// const { Triangle, Circle, Square } = require('./lib/shapes.js');
 
 // Function to create the SVG file
 function createSVGFile(filename, text, shapeType, textColor, shapeColor) {
