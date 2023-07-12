@@ -66,7 +66,7 @@ inquirer
 
     createSVGFile(filename, text, shapeType, textColor, shapeColor);
   
-    console.log(`Generated ${filename}`);
+    console.log(`Generated ${filename}.svg`);
   })  
   .catch((error) => {
     console.log('An error occurred:', error);
