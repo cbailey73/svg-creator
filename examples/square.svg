@@ -1,0 +1,4 @@
+<svg width="300" height="200">
+    <rect x="62.5" y="12.5" width="175" height="175" fill="#87CEEB" />
+      <text x="150" y="100" font-size="4em" text-anchor="middle" alignment-baseline="middle" fill="indigo">SQR</text>
+  </svg>
