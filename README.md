@@ -21,4 +21,4 @@ This tutorial was used to create jest tests looking for specific strings within 
 This tutorial was followed to understand how to create mock files for jest testing: https://stackoverflow.com/questions/49359476/mock-a-function-from-another-file-jest
 
 ## Demonstration
-To be displayed
+Link to video demonstration: https://app.screencast.com/E5izE2ao7WirM?tab=Details&conversation=8usxu4SInXF2uuaX24mdlZ
