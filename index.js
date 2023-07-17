@@ -36,29 +36,29 @@ inquirer
     {
       type: 'input',
       name: 'filename',
-      message: 'Enter the name of the SVG file:',
-      default: 'logo',
+      message: 'What do you want to call your file? Please do not include filetype.',
+      default: 'my_logo',
     },
     {
       type: 'input',
       name: 'text',
-      message: 'Enter up to three characters:',
+      message: 'Which characters do you want on your SVG? Choose up to three.',
     },
     {
       type: 'input',
       name: 'textColor',
-      message: 'Enter the text color:',
+      message: 'What is your desired text color? RGB values and Hex code may be used.',
     },
     {
       type: 'list',
       name: 'shapeType',
-      message: 'Choose a shape:',
+      message: 'Which shape do you want?',
       choices: ['circle', 'triangle', 'square'],
     },
     {
       type: 'input',
       name: 'shapeColor',
-      message: 'Enter the shape color:',
+      message: 'What is your desired shape color? RGB values and Hex code may be used.',
     },
   ])
   .then((answers) => {
@@ -71,3 +71,6 @@ inquirer
   .catch((error) => {
     console.log('An error occurred:', error);
   });
+
+module.exports = createSVGFile;
+

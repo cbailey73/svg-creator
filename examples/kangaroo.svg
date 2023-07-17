@@ -1,4 +1,0 @@
-<svg width="300" height="200">
-    <polygon points="75, 175 225, 175 150, 25" fill="green" />
-      <text x="150" y="125" font-size="3em" text-anchor="middle" alignment-baseline="middle" fill="red">sad</text>
-  </svg>
